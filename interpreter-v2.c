@@ -29,11 +29,9 @@ char *read_file(const char *filename)
     rewind(filepointer);
 
     buffer = (char *)calloc(filesize + 1, sizeof(char));
-    printf("buffer init");
     fread(buffer, sizeof(char), filesize, filepointer);
     buffer[filesize] = '\0';
     fclose(filepointer);
-    printf("File loaded");
 
     return buffer;
 }
